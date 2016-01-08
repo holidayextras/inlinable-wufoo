@@ -1,0 +1,23 @@
+<script>
+  var handleInput = function() { return true; };
+  window["<%- fnName %>"] = (function(formName, base64FormHtml) {
+    return function($) {
+      var sourceContainerSelector = '#wh-source-' + formName;
+      var targetContainerSelector = '#wh-target-' + formName;
+
+      $('body').append(atob(base64FormHtml));
+      $(targetContainerSelector).append($(sourceContainerSelector).clone());
+
+      $(':input', sourceContainerSelector).each(function(i, n) {
+        var $source = $(n);
+        var name = $source.attr('name');
+        var value = $source.val();
+        var $target = $(':input[name=' + name + ']', targetContainerSelector);
+        $target.val(value);
+      });
+
+      $(targetContainerSelector).submit();
+      $(targetContainerSelector).remove();
+    }
+  })("<%- locator %>", "<%- base64FormHtml %>");
+</script>

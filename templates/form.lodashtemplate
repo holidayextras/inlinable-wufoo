@@ -1,0 +1,4 @@
+<div id="wh-container-<%- locator %>" style="display:none;">
+  <%= formHtml %>
+  <iframe name="wh-submit-to-<%- locator %>"></iframe>
+</div>
