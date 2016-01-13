@@ -1,10 +1,10 @@
 #!/bin/bash
 
-TAG=`git tag --contains`
-if [[ -z $TAG ]]; then
-  echo "No tag - nothing to build"
-  exit;
-fi
+#TAG=`git tag --contains`
+#if [[ -z $TAG ]]; then
+#  echo "No tag - nothing to build"
+#  exit;
+#fi
 
 rm -rf node_modules
 npm install --production
