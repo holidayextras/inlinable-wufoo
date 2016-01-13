@@ -1,5 +1,7 @@
 # Inlinable Wufoo
 
+[![Build Status](https://travis-ci.org/holidayextras/inlinable-wufoo.svg?branch=master)](https://travis-ci.org/holidayextras/inlinable-wufoo)
+
 Provide a [Wufoo](http://www.wufoo.com/) form, this will break out the fields within so they can be placed inline within an already existing form. Wufoo's form is kept around, and can be passed data when the containing form is submitted if you call a javascript function.
 
 ## Usage
