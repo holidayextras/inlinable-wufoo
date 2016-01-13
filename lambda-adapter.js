@@ -1,3 +1,5 @@
+'use strict';
+
 var lambdaAdapter = module.exports = {};
 var inlinableWufoo = require('./');
 
