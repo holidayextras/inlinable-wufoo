@@ -4,7 +4,7 @@
   "description": "Rewrite a wufoo form's embed script to be embeddable inside an existing form.",
   "main": "index.js",
   "scripts": {
-    "build": "./scripts/build.sh",
+    "build:lambda": "./scripts/build-lambda.sh",
     "ci": "npm run test && npm run lint",
     "lint": "make-up lib",
     "start": "node server",

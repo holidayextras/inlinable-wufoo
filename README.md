@@ -47,3 +47,26 @@ Other field types will be rendered, but may or (more likely) may not work. Also 
 ```
 npm test
 ```
+
+## AWS API Gateway / Lambda
+
+An adapter / helper script is included for deploying this to AWS API Gateway as a lambda function.
+
+```
+npm run build:lambda
+```
+
+will ensure only the production dependencies are installed, and zip the project up into the dist/ directory ready for upload into the AWS lambda console. The handler is
+
+```
+lambda-adapter.handler
+```
+
+Once an API is created in API gateway, you can make a `form` query string available in **Method Request**, and add a mapping template to **Integration Request**; you'll likely want the form to be provided to the API but for the account to be static. An example mapping template that will do this is:
+
+```
+{
+  "account": "your-wufoo-account",
+  "form": "$input.params('form')"
+}
+```
