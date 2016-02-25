@@ -52,7 +52,7 @@ describe('inlinableWufoo html transforms', function() {
       var html = cheerio.load('<ul id="my-id"><li><label for="field1">transformable field name</label><div><input name="field1" /></div></li></ul>').root();
       var transformed = transforms.bootstrapify(html, 'foo');
 
-      expect(transformed.html()).to.equal('<div id="my-id"><div class="form-group"><label for="field1" class="form-label">transformable field name</label><div class="form-controls"><div><input name="field1" class="control-label"></div></div></div></div>');
+      expect(transformed.html()).to.equal('<div id="my-id"><div class="form-group"><label for="field1" class="control-label col-md-4">transformable field name</label><div class="col-md-3"><div><input name="field1" class="form-control"></div></div></div></div>');
     });
 
     it('ignores hidden fields', function() {
